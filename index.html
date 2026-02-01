@@ -15,13 +15,10 @@
             <a href="#home" class="logo">Jahedul<span>.Design</span></a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#achievements">Achievements</a></li>
-                <li><a href="#blogs">Blogs</a></li>
-                <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="cv.pdf" class="btn-primary" id="downloadCvBtn" download>Download CV <i class="fas fa-download"></i></a></li>
+                <li><i class="fas fa-moon" id="theme-icon"></i></li>
             </ul>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
@@ -41,7 +38,6 @@
                     <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
                     <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://dribbble.com" target="_blank"><i class="fab fa-dribbble"></i></a>
-                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
 
                 <div class="cta-group">
@@ -61,157 +57,75 @@
             <div class="about-grid">
                 <div class="about-text">
                     <p>I am a passionate UI/UX designer based in Bangladesh. I specialize in transforming complex problems into simple, beautiful, and intuitive interface designs.</p>
-                    <p>My workflow blends design thinking with technical execution using HTML, CSS, and JavaScript to bridge the gap between design and development.</p>
                     
-                    <div class="skills-list">
-                        <span>Figma</span>
-                        <span>Adobe XD</span>
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>Unit Testing</span>
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
+                        <p class="tab-links" onclick="openTab('experience')">Experience</p>
+                        <p class="tab-links" onclick="openTab('education')">Education</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="skills">
+                        <ul>
+                            <li><span>UI/UX</span>Figma, Adobe XD, Prototyping</li>
+                            <li><span>Frontend</span>HTML, CSS, JavaScript, React</li>
+                            <li><span>Tools</span>VS Code, Git/GitHub, Photoshop</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="experience">
+                        <ul>
+                            <li><span>2023 - Current</span>Freelance UI/UX Designer</li>
+                            <li><span>2022 - 2023</span>Frontend Intern at TechFirm</li>
+                            <li><span>2020 - 2022</span>Graphic Design Lead at UniClub</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="education">
+                        <ul>
+                            <li><span>2019 - 2023</span>B.Sc. in Computer Science</li>
+                            <li><span>2017 - 2019</span>Higher Secondary Certificate</li>
+                        </ul>
                     </div>
                 </div>
+
                 <div class="about-stats">
                     <div class="stat-box">
-                        <h4>3+</h4>
-                        <p>Years Experience</p>
+                        <h4>3+</h4> <p>Years Experience</p>
                     </div>
                     <div class="stat-box">
-                        <h4>50+</h4>
-                        <p>Projects Completed</p>
+                        <h4>50+</h4> <p>Projects Completed</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="education" class="section-padding bg-darker">
+    <section id="projects" class="section-padding bg-darker">
         <div class="container">
-            <h3 class="section-title">Education</h3>
-            <div class="education-grid">
-                <div class="edu-card">
-                    <h4>B.Sc. in Computer Science</h4>
-                    <span class="year">2019 - 2023</span>
-                    <p class="institution">University of Example, Bangladesh</p>
-                    <p>Major in Human-Computer Interaction and Web Technologies.</p>
-                </div>
-                <div class="edu-card">
-                    <h4>Higher Secondary Certificate</h4>
-                    <span class="year">2017 - 2019</span>
-                    <p class="institution">Dhaka City College</p>
-                    <p>Science Group with GPA 5.00.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects" class="section-padding">
-        <div class="container">
-            <h3 class="section-title">Selected Projects</h3>
+            <h3 class="section-title">Latest Projects</h3>
             <div class="project-grid">
                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/work3.png" alt="US Store App">
-                    </div>
+                    <div class="project-image"><img src="images/work1.png" alt="Project 1"></div>
                     <div class="project-info">
-                        <h4>US Store App</h4>
-                        <p class="project-tags">E-Commerce • UI Design</p>
-                        <p>A clean mobile interface for an electronics store featuring product grids and easy checkout.</p>
+                        <h4>E-Commerce App</h4>
+                        <p class="project-tags">UI Design • Mobile</p>
                         <a href="#" class="link-arrow">View Case Study <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-
                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/work2.png" alt="Music App">
-                    </div>
+                    <div class="project-image"><img src="images/work2.png" alt="Project 2"></div>
                     <div class="project-info">
-                        <h4>Music Streaming UI</h4>
-                        <p class="project-tags">App Design • User Flow</p>
-                        <p>An immersive music player interface focusing on personalization algorithms.</p>
+                        <h4>Music Dashboard</h4>
+                        <p class="project-tags">Web App • React</p>
                         <a href="#" class="link-arrow">View Case Study <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-
                 <article class="project-card">
-                    <div class="project-image">
-                        <img src="images/work1.png" alt="iOS Widget">
-                    </div>
+                    <div class="project-image"><img src="images/work3.png" alt="Project 3"></div>
                     <div class="project-info">
-                        <h4>iOS Widget System</h4>
-                        <p class="project-tags">System Design • Interaction</p>
-                        <p>Optimized home screen layout focusing on productivity widgets.</p>
+                        <h4>Health Tracker</h4>
+                        <p class="project-tags">UX Research • App</p>
                         <a href="#" class="link-arrow">View Case Study <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
-            </div>
-        </div>
-    </section>
-
-    <section id="achievements" class="section-padding bg-darker">
-        <div class="container">
-            <h3 class="section-title">Achievements</h3>
-            <ul class="achievements-list">
-                <li>
-                    <i class="fas fa-trophy"></i>
-                    <div>
-                        <h4>Best UI/UX Design Award 2023</h4>
-                        <p>Won 1st place in the National Hackathon for designing an accessible education app.</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="fas fa-certificate"></i>
-                    <div>
-                        <h4>Google UX Design Professional Certificate</h4>
-                        <p>Completed the rigorous 7-course series on Coursera.</p>
-                    </div>
-                </li>
-                <li>
-                    <i class="fas fa-star"></i>
-                    <div>
-                        <h4>Top Rated Seller on Upwork</h4>
-                        <p>Maintained a 100% job success score for 12 consecutive months.</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="blogs" class="section-padding">
-        <div class="container">
-            <h3 class="section-title">Blogs & Hobbies</h3>
-            <div class="blog-grid">
-                <div class="blog-card">
-                    <i class="fas fa-pen-nib"></i>
-                    <h4>The Future of Minimalist Design</h4>
-                    <p>A deep dive into why minimalism is more than just a visual aesthetic.</p>
-                    <a href="#">Read on Medium &rarr;</a>
-                </div>
-                <div class="blog-card">
-                    <i class="fas fa-camera"></i>
-                    <h4>Photography & Vlogging</h4>
-                    <p>In my free time, I document my travels and tech setup upgrades.</p>
-                    <a href="#">Watch on YouTube &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="publications" class="section-padding bg-darker">
-        <div class="container">
-            <h3 class="section-title">Publications</h3>
-            <div class="pub-list">
-                <div class="pub-item">
-                    <h4>"User Retention Strategies in Fintech Apps"</h4>
-                    <p>Published in <i>International Journal of HCI, 2024</i></p>
-                    <a href="#" class="btn-text">Read Paper</a>
-                </div>
-                <div class="pub-item">
-                    <h4>"Dark Mode: A Necessity, Not a Trend"</h4>
-                    <p>Published in <i>UX Collective, 2023</i></p>
-                    <a href="#" class="btn-text">Read Paper</a>
-                </div>
             </div>
         </div>
     </section>
@@ -220,14 +134,6 @@
         <div class="container">
             <h3 class="section-title">Contact Me</h3>
             <div class="contact-wrapper">
-                <div class="contact-text">
-                    <p>Interested in hiring me or collaborating on a project? Fill out the form below.</p>
-                    <div class="contact-details">
-                        <p><i class="fas fa-envelope"></i> email@example.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> Chittagong, Bangladesh</p>
-                    </div>
-                </div>
-
                 <form name="submit-to-google-sheet" class="contact-form" id="contactForm">
                     <div class="input-group">
                         <input type="text" name="name" id="inputName" placeholder="Your Name" required>
@@ -250,6 +156,5 @@
     </footer>
 
     <script src="script.js"></script>
-    <script src="tests.js"></script>
 </body>
 </html>
