@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jahedul Islam | UI/UX Designer</title>
+    <title>Jahedul Islam | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -13,13 +13,19 @@
     <nav class="navbar" id="navbar">
         <div class="container nav-flex">
             <a href="#home" class="logo">Jahedul<span>.Design</span></a>
+            
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#blogs">Blogs</a></li>
+                <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="cv.pdf" class="btn-primary" id="downloadCvBtn" download>Download CV <i class="fas fa-download"></i></a></li>
                 <li><i class="fas fa-moon" id="theme-icon"></i></li>
             </ul>
+            
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
@@ -61,7 +67,6 @@
                     <div class="tab-titles">
                         <p class="tab-links active-link" onclick="openTab('skills')">Skills</p>
                         <p class="tab-links" onclick="openTab('experience')">Experience</p>
-                        <p class="tab-links" onclick="openTab('education')">Education</p>
                     </div>
 
                     <div class="tab-contents active-tab" id="skills">
@@ -71,17 +76,12 @@
                             <li><span>Tools</span>VS Code, Git/GitHub, Photoshop</li>
                         </ul>
                     </div>
+
                     <div class="tab-contents" id="experience">
                         <ul>
                             <li><span>2023 - Current</span>Freelance UI/UX Designer</li>
                             <li><span>2022 - 2023</span>Frontend Intern at TechFirm</li>
                             <li><span>2020 - 2022</span>Graphic Design Lead at UniClub</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2019 - 2023</span>B.Sc. in Computer Science</li>
-                            <li><span>2017 - 2019</span>Higher Secondary Certificate</li>
                         </ul>
                     </div>
                 </div>
@@ -98,9 +98,27 @@
         </div>
     </section>
 
-    <section id="projects" class="section-padding bg-darker">
+    <section id="education" class="section-padding bg-darker">
         <div class="container">
-            <h3 class="section-title">Latest Projects</h3>
+            <h3 class="section-title">Education</h3>
+            <div class="education-grid">
+                <div class="edu-card">
+                    <h4>B.Sc. in Computer Science</h4>
+                    <span style="color:var(--primary-color); display:block; margin:5px 0;">2019 - 2023</span>
+                    <p>University of Dhaka</p>
+                </div>
+                <div class="edu-card">
+                    <h4>Higher Secondary Certificate</h4>
+                    <span style="color:var(--primary-color); display:block; margin:5px 0;">2017 - 2019</span>
+                    <p>Dhaka City College</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-padding">
+        <div class="container">
+            <h3 class="section-title">Projects</h3>
             <div class="project-grid">
                 <article class="project-card">
                     <div class="project-image"><img src="images/work1.png" alt="Project 1"></div>
@@ -126,6 +144,66 @@
                         <a href="#" class="link-arrow">View Case Study <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements" class="section-padding bg-darker">
+        <div class="container">
+            <h3 class="section-title">Achievements</h3>
+            <ul class="achievements-list">
+                <li>
+                    <i class="fas fa-trophy"></i>
+                    <div>
+                        <h4>Best UI Design 2023</h4>
+                        <p>Awarded by Tech Global for the E-Commerce App redesign.</p>
+                    </div>
+                </li>
+                <li>
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <h4>Google UX Professional Certificate</h4>
+                        <p>Completed the rigorous 7-course series on Coursera.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="blogs" class="section-padding">
+        <div class="container">
+            <h3 class="section-title">Blogs & Hobbies</h3>
+            <div class="blog-grid">
+                <div class="blog-card">
+                    <i class="fas fa-pen-nib" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                    <h4>Minimalism in UI</h4>
+                    <p>Exploring how less is more in modern interface design.</p>
+                    <a href="#" style="color: var(--primary-color); margin-top: 10px; display: block;">Read More</a>
+                </div>
+                <div class="blog-card">
+                    <i class="fas fa-camera" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 15px;"></i>
+                    <h4>Street Photography</h4>
+                    <p>My gallery of capturing life in the streets of Dhaka.</p>
+                    <a href="#" style="color: var(--primary-color); margin-top: 10px; display: block;">View Gallery</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publications" class="section-padding bg-darker">
+        <div class="container">
+            <h3 class="section-title">Publications</h3>
+            <div class="pub-list">
+                <div class="pub-item">
+                    <h4>"The Future of Dark Mode"</h4>
+                    <p>Published in <i>UX Collective, 2024</i></p>
+                    <a href="#">Read Article <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                <div class="pub-item">
+                    <h4>"Accessibility First Design"</h4>
+                    <p>Published in <i>Design Weekly, 2023</i></p>
+                    <a href="#">Read Article <i class="fas fa-external-link-alt"></i></a>
+                </div>
             </div>
         </div>
     </section>
@@ -156,5 +234,6 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="tests.js"></script>
 </body>
 </html>
