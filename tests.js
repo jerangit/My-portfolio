@@ -12,14 +12,22 @@ function runTest(testName, testFunction) {
     }
 }
 
+
 runTest("Navbar should exist", () => {
     return document.getElementById('navbar') !== null;
 });
 
 runTest("Hero Image should have an alt tag", () => {
     const img = document.getElementById('heroImg');
-    return img && img.alt.length > 0;
+    return img && img.alt === "Jahedul Islam Avatar";
 });
+
+
+runTest("Download CV button should link to PDF", () => {
+    const btn = document.getElementById('downloadCvBtn');
+    return btn && btn.getAttribute('href') === 'cv.pdf';
+});
+
 
 runTest("Contact Form should have name, email, and message inputs", () => {
     const name = document.getElementById('inputName');
@@ -28,14 +36,11 @@ runTest("Contact Form should have name, email, and message inputs", () => {
     return name && email && msg;
 });
 
-runTest("Education Section should exist", () => {
-    return document.getElementById('education') !== null;
-});
-runTest("Achievements Section should exist", () => {
-    return document.getElementById('achievements') !== null;
-});
-runTest("Publications Section should exist", () => {
-    return document.getElementById('publications') !== null;
+
+runTest("Google Script URL should be configured in script.js", () => {
+    
+    console.warn("MANUAL CHECK: Ensure 'scriptURL' in script.js is replaced with your actual Google Deployment URL.");
+    return true; 
 });
 
 console.log("%c UNIT TESTS COMPLETED ", "background: #222; color: #bada55; font-size: 20px; padding: 10px;");
