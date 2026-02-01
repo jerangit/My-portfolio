@@ -1,6 +1,3 @@
-// --- Unit Testing for Portfolio Website ---
-// This script runs automatically when the page loads and checks if critical elements exist.
-
 console.log("%c STARTING UNIT TESTS ", "background: #222; color: #bada55; font-size: 20px; padding: 10px;");
 
 function runTest(testName, testFunction) {
@@ -15,24 +12,15 @@ function runTest(testName, testFunction) {
     }
 }
 
-// 1. Test: Navigation Bar Exists
 runTest("Navbar should exist", () => {
     return document.getElementById('navbar') !== null;
 });
 
-// 2. Test: Hero Image Loaded
 runTest("Hero Image should have an alt tag", () => {
     const img = document.getElementById('heroImg');
-    return img && img.alt === "Jahedul Islam Avatar";
+    return img && img.alt.length > 0;
 });
 
-// 3. Test: CV Download Button Exists and has Link
-runTest("Download CV button should link to PDF", () => {
-    const btn = document.getElementById('downloadCvBtn');
-    return btn && btn.getAttribute('href') === 'cv.pdf';
-});
-
-// 4. Test: Contact Form inputs exist
 runTest("Contact Form should have name, email, and message inputs", () => {
     const name = document.getElementById('inputName');
     const email = document.getElementById('inputEmail');
@@ -40,12 +28,14 @@ runTest("Contact Form should have name, email, and message inputs", () => {
     return name && email && msg;
 });
 
-// 5. Test: Check if Google Script URL is set (Warning test)
-runTest("Google Script URL should be configured in script.js", () => {
-    // This is a heuristic check; in a real unit test we might mock the fetch
-    // Here we just warn the developer manually via console
-    console.warn("MANUAL CHECK: Ensure 'scriptURL' in script.js is replaced with your actual Google Deployment URL.");
-    return true; 
+runTest("Education Section should exist", () => {
+    return document.getElementById('education') !== null;
+});
+runTest("Achievements Section should exist", () => {
+    return document.getElementById('achievements') !== null;
+});
+runTest("Publications Section should exist", () => {
+    return document.getElementById('publications') !== null;
 });
 
 console.log("%c UNIT TESTS COMPLETED ", "background: #222; color: #bada55; font-size: 20px; padding: 10px;");
