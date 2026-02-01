@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-   -
     window.openTab = function(tabName) {
         const tabLinks = document.getElementsByClassName("tab-links");
         const tabContents = document.getElementsByClassName("tab-contents");
@@ -15,11 +14,9 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById(tabName).classList.add("active-tab");
     }
 
-  
     const themeIcon = document.getElementById("theme-icon");
     const body = document.body;
 
-    
     if(localStorage.getItem("theme") === "light") {
         body.classList.add("light-mode");
         themeIcon.classList.remove("fa-moon");
@@ -41,18 +38,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-   
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    if(hamburger && navLinks) {
+    if (hamburger) {
         hamburger.addEventListener('click', () => {
-            
             navLinks.classList.toggle('active');
-            
-          
             const icon = hamburger.querySelector('i');
-            if(navLinks.classList.contains('active')) {
+            if (navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
                 icon.classList.add('fa-times');
             } else {
@@ -60,19 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon.classList.add('fa-bars');
             }
         });
-
-       
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                const icon = hamburger.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
     }
 
-    
     const scriptURL = 'https://script.google.com/macros/s/AKfycbzPPriAK3LkH6HwY2CzZfoyoTz1F7EXDkit7tsZV0kbL3L9lK5cxS-JjWZBc36Z93wbpA/exec'; 
     const form = document.forms['submit-to-google-sheet'];
     const msg = document.getElementById('msg');
