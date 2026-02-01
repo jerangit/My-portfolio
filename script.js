@@ -1,31 +1,79 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Mobile Menu Toggle ---
+   -
+    window.openTab = function(tabName) {
+        const tabLinks = document.getElementsByClassName("tab-links");
+        const tabContents = document.getElementsByClassName("tab-contents");
+        
+        for(let tabLink of tabLinks) {
+            tabLink.classList.remove("active-link");
+        }
+        for(let tabContent of tabContents) {
+            tabContent.classList.remove("active-tab");
+        }
+        
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabName).classList.add("active-tab");
+    }
+
+  
+    const themeIcon = document.getElementById("theme-icon");
+    const body = document.body;
+
+    
+    if(localStorage.getItem("theme") === "light") {
+        body.classList.add("light-mode");
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+    }
+
+    if(themeIcon){
+        themeIcon.onclick = function() {
+            body.classList.toggle("light-mode");
+            if(body.classList.contains("light-mode")) {
+                themeIcon.classList.remove("fa-moon");
+                themeIcon.classList.add("fa-sun");
+                localStorage.setItem("theme", "light");
+            } else {
+                themeIcon.classList.remove("fa-sun");
+                themeIcon.classList.add("fa-moon");
+                localStorage.setItem("theme", "dark");
+            }
+        }
+    }
+
+   
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
 
-    if(hamburger) {
+    if(hamburger && navLinks) {
         hamburger.addEventListener('click', () => {
+            
             navLinks.classList.toggle('active');
-            // Simple toggle styling for mobile would be needed in CSS to show/hide .nav-links
-            if(navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
+            
+          
+            const icon = hamburger.querySelector('i');
+            if(navLinks.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
             } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '70px';
-                navLinks.style.right = '0';
-                navLinks.style.background = '#000';
-                navLinks.style.width = '100%';
-                navLinks.style.padding = '20px';
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
             }
+        });
+
+       
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                const icon = hamburger.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
         });
     }
 
-    // --- Contact Form to Google Sheets ---
-    // PASTE YOUR GOOGLE SCRIPT URL HERE
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzPPriAK3LkH6HwY2CzZfoyoTz1F7EXDkit7tsZV0kbL3L9lK5cxS-JjWZBc36Z93wbpA/exec'; 
     
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzPPriAK3LkH6HwY2CzZfoyoTz1F7EXDkit7tsZV0kbL3L9lK5cxS-JjWZBc36Z93wbpA/exec'; 
     const form = document.forms['submit-to-google-sheet'];
     const msg = document.getElementById('msg');
     const submitBtn = document.getElementById('submitBtn');
@@ -33,7 +81,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (form) {
         form.addEventListener('submit', e => {
             e.preventDefault();
-            
             submitBtn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
             submitBtn.disabled = true;
 
@@ -46,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     form.reset();
                 })
                 .catch(error => {
-                    msg.style.color = "#ef4444"; // Red
+                    msg.style.color = "#ef4444"; 
                     msg.innerHTML = "Error! Please check internet.";
                     submitBtn.innerHTML = "Send Message";
                     submitBtn.disabled = false;
